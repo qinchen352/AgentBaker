@@ -45,4 +45,6 @@ pretty_date=$(date +"%b %Y")
 sku_id="${SKU_PREFIX}-${short_date}"
 echo "Checking if offer contains SKU: $sku_id"
 # Check if SKU already exists in offer
-hack/tools/bin/pub skus list -p $PUBLISHER -o $OFFER
+(set -x; hack/tools/bin/pub skus list -p $PUBLISHER -o $OFFER | jq ".[] | .planId" | tr -d '"' | tee skus.txt)
+
+cat skus.txt
