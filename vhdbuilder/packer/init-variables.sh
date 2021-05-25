@@ -86,6 +86,9 @@ fi
 	echo "IMPORTED_IMAGE_URL: $IMPORTED_IMAGE_URL"
 	echo "DESTINATION_WITH_SAS: $DESTINATION_WITH_SAS"
 	
+	echo Importing VHD from $IMPORT_IMAGE_URL
+	azcopy-preview copy $IMPORT_IMAGE_URL$IMPORT_IMAGE_SAS $DESTINATION_WITH_SAS
+	
 #Tien: for testing	
 	
 
