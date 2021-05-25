@@ -73,6 +73,8 @@ if [[ "$MODE" == "gen2Mode" ]]; then
 	fi
 fi
 
+
+#Tien: we are here
 if [[ "$MODE" == "sigMode" || "$MODE" == "gen2Mode" ]]; then
 	echo "SIG existence checking for $MODE"
 	id=$(az sig show --resource-group ${AZURE_RESOURCE_GROUP_NAME} --gallery-name ${SIG_GALLERY_NAME}) || id=""
@@ -106,6 +108,10 @@ else
 	echo "Skipping SIG check for $MODE"
 fi
 
+
+
+
+#Tien: this is important
 # Image import from storage account. Required to build CBLMariner images.
 if [[ "$OS_SKU" == "CBLMariner" ]]; then
 	if [[ $HYPERV_GENERATION == "V2" ]]; then
