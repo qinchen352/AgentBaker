@@ -149,7 +149,8 @@ if [[ "$OS_SKU" == "CBLMariner" ]]; then
 	echo "IMPORT_IMAGE_URL: $IMPORT_IMAGE_URL"
 	echo "DESTINATION_WITH_SAS: $DESTINATION_WITH_SAS"
 	echo Importing VHD from $IMPORT_IMAGE_URL
-	azcopy-preview copy $IMPORT_IMAGE_URL$IMPORT_IMAGE_SAS $DESTINATION_WITH_SAS
+	#azcopy-preview copy $IMPORT_IMAGE_URL$IMPORT_IMAGE_SAS $DESTINATION_WITH_SAS
+	azcopy-preview copy $IMPORT_IMAGE_URL $DESTINATION_WITH_SAS
 	echo "Tien is here3"
 
 # Generation 2 Packer builds require that the imported image is hosted in a SIG
